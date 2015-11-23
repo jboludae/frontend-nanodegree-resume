@@ -15,11 +15,119 @@ h6 {
   color: rgb(13, 49, 95);
 }
 
+/* We insert class .text-wrapper so content will be contained in a box
+widht max-width of 970px*/
+
 .text-wrapper{
   margin: 0 auto;
   max-width: 970px;
   padding: 0 20px;
 }
+
+/* We style the navigation bars*/
+/* First the standard navi bar for big screens*/
+nav{
+  margin-bottom: 0px;
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+nav#nav-main{
+  background-color: white;
+  padding: 0;
+}
+
+nav#nav-main ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav#nav-main li{
+  display: inline-block;
+  border-right: solid 0px rgb(13,49, 95);
+  padding: 0 0px;
+  width: 24.2%;
+}
+nav#nav-main li:last-child{
+  border-right: none;
+}
+
+nav#nav-main a{
+  padding: 15px 0px;
+  margin-top: 0px;
+  font-weight: 700;
+}
+
+nav#nav-main a:hover{
+  background-color: rgb(13,49,95);
+  color: rgb(120, 151, 191);
+}
+/* Second the standard navi trigger*/
+
+#nav-trigger{
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+#nav-trigger span{
+  display: inline-block;
+  padding: 15px 30px;
+  color: rgb(120, 151, 191);
+  font-weight: 700;
+}
+
+
+#nav-trigger:hover{
+  background-color: rgb(13,49,95);
+  color: rgb(120, 151, 191);
+}
+
+
+nav#nav-mobile{
+  position: relative;
+  display: none;
+}
+
+nav#nav-mobile ul{
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: rgb(255,255,255);
+}
+
+nav#nav-mobile li{
+  display: block;
+  padding: 5px 0;
+  margin: 0 5px;
+}
+
+nav#nav-mobile li:last-child{
+  border-bottom: none;
+}
+
+nav#nav-mobile a {
+  display: block;
+  color: rgb(120, 151, 191);
+  padding: 10px 30px;
+  font-weight: 700;
+}
+nav#nav-mobile a:hover {
+  background-color: rgb(13, 49, 95);
+  color: rgb(120, 151, 191);
+}
+
+.ul{
+  display: line;
+}
+
 
 .clear-fix {
   overflow: auto;
@@ -165,6 +273,7 @@ ul {
 
 img {
   padding: 10px;
+  max-width: 100%;
 }
 
 span {
@@ -176,6 +285,18 @@ span {
 }
 
 /* Media queries to handle various device widths */
+
+@media only screen and (max-width: 540px) {
+  #nav-main {
+    display: none;
+  }
+  nav#nav-mobile {
+    display: block;
+  }
+  #nav-trigger {
+    display: block;
+  }
+}
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
@@ -203,13 +324,12 @@ span {
 
 #map {
   display: block;
-  height: 100%;
-  margin: 0 5%;
+  height: 350px;
+  max-width: 100%;
 }
 
 #mapDiv {
   height: 400px;
-  width: 100%;
   padding-bottom: 5%;
 }
 

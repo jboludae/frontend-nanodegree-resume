@@ -23,8 +23,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
-  <!-- Load the font. -->
+  <!-- Load the fonts. -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -64,8 +65,22 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="header" class="center-content clear-fix">
       <div class = "text-wrapper">
         <ul id="topContacts" class="flex-box"></ul>
+
       </div>
     </div>
+    <nav id="nav-main">
+      <ul>
+        <li><a href="http://jboludae.github.io/Project-1-Udacity-FEDND/">Homepage</a></li>
+        <li><a href="#workExperience">Work Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </nav>
+    <div id="nav-trigger">
+        <span><i class="fa fa-bars"></i> MENU</span>
+    </div>
+    <nav id="nav-mobile">
+    </nav>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
       <div class = "text-wrapper">
@@ -97,6 +112,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       </div>
     </div>
   </div>
+
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be

@@ -216,6 +216,7 @@ education.display = function(){
 };
 
 
+
 displayWork();
 bio.display();
 projects.display();
@@ -223,5 +224,38 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
+// We add some animation for the hamburger menu
 
 
+$(document).ready(function(){
+    $("#nav-mobile").html($("#nav-main").html());
+
+    $("#nav-trigger").click(function(){
+        if ($("nav#nav-mobile ul").hasClass("expanded")) {
+            $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
+            $(this).removeClass("open");
+        } else {
+            $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
+            $(this).addClass("open");
+        }
+    });
+    $("#nav-mobile ul li a").click(function(){
+        $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
+        $(this).removeClass("open");
+    })
+});
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 750);
+        return false;
+      }
+    }
+  });
+});
