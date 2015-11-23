@@ -11,7 +11,14 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
+  color: rgb(13, 49, 95);
+}
+
+.text-wrapper{
+  margin: 0 auto;
+  max-width: 970px;
+  padding: 0 20px;
 }
 
 .clear-fix {
@@ -21,7 +28,7 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0;
 }
 
 h1 {
@@ -32,24 +39,24 @@ h1 {
 }
 
 h2 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
-  color: #999;
+  color: #f5a623;
   line-height: 29px;
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: rgb(50,90,140);
   line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
-  color: #4a4a4a;
+  color: rgb(50,90,140);
   line-height: 17px;
 }
 
@@ -57,7 +64,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  padding:10px 0px;
 
 }
 
@@ -65,7 +72,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: rgb(120, 151, 191);
   line-height: 16px;
   float: left;
 }
@@ -73,7 +80,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: rgb(120, 151, 191);
   line-height: 16px;
   float: right;
 
@@ -81,12 +88,12 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: rgb(50,90,140);
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  color: rgb(120, 151, 191);
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -105,7 +112,7 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #fff;
 }
 
 .orange-text {
@@ -113,7 +120,7 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
+  font-weight: 700;
   color: #fff;
 }
 
@@ -123,13 +130,13 @@ a {
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.blue-background {
+  background-color: rgb(50, 90, 140);
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: rgb(50,90,140);
 }
 
 .flex-box {
@@ -142,7 +149,7 @@ a {
 }
 
 .center-content {
-  padding: 2.5% 5%;
+  padding: 2.5% 0%;
 }
 
 ul {
