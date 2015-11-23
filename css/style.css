@@ -12,7 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Lato", sans-serif;
-  color: rgb(13, 49, 95);
+  color: rgb(120, 151, 191);
 }
 
 /* We insert class .text-wrapper so content will be contained in a box
@@ -85,6 +85,7 @@ nav#nav-main a:hover{
   color: rgb(120, 151, 191);
 }
 
+/* And then the navigation bar that will show in small screens*/
 
 nav#nav-mobile{
   position: relative;

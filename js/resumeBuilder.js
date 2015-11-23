@@ -146,7 +146,7 @@ bio.display = function(){
     });
 };
 
-function displayWork(){
+work.display = function(){
     for (job in work.jobs){
         $("#workExperience .text-wrapper").append(HTMLworkStart);
         var workEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -179,12 +179,6 @@ projects.display = function(){
     });
 };
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-
 education.display = function(){
     education.schools.forEach(function(school){
         $("#education .text-wrapper").append(HTMLschoolStart);
@@ -215,10 +209,8 @@ education.display = function(){
 
 };
 
-
-
-displayWork();
 bio.display();
+work.display();
 projects.display();
 education.display();
 
@@ -244,6 +236,8 @@ $(document).ready(function(){
         $(this).removeClass("open");
     })
 });
+
+// We finally add an animation so the page will scroll smootly to the sections
 
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
