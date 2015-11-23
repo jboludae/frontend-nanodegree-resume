@@ -9,105 +9,94 @@ var bio = {
         "mobile": "+34 663 655 783",
         "email": "jboludae@gmail.com",
         "github": "jboludae",
+        "twitter": "@JosepBoluda",
         "location": "Bilbao, Spain",
     },
-    "bioPic": "images/fry.jpg",
-    "welcomeMsg":"Seasoned marketing professional with experienced in PM, PM and XYW",
+    "welcomeMessage": "Seasoned marketing professional with experienced in PM, PM and XYW",
     "skills":[
     "awesomeness", "delivering things", "cryogenic sleep", "getting things done", "html", "javascript"
-    ]
+    ],
+    "biopic": "images/fry.jpg",
+
+};
+
+var education = {
+    "schools": [{
+        "name":"Kellogg School of Management",
+        "location":"Evanston, IL",
+        "degree":"Master of Business Administration",
+        "majors":["Marketing", "Strategy", "Finance", "Managerial Economics"],
+        "dates": 2010,
+        "url": "http://www.kellogg.northwestern.edu/"
+    },{
+        "name":"Universidad Politécnica de Valencia",
+        "location":"Valencia, Spain",
+        "degree":"MSc in Civil Engineering",
+        "majors":["Urban Planning"],
+        "dates": 2004,
+        "url": "https://www.upv.es/"
+    }],
+    "onlineCourses": [{
+        "title":"Introduction to Programming Nanodegree",
+        "school":"Udacity",
+        "date": 2015,
+        "url":"http://udacity.com/"
+    },{
+        "title":"Front End Development Nanodegree",
+        "school":"Udacity",
+        "date": 2015,
+        "url":"http://udacity.com/"
+    }]
 };
 
 var work = {
-    "jobs":[
-    {
+    "jobs":[{
         "employer":"Brammer Iberia, S.A.",
         "title":"Growth and Marketing Head",
         "location":"Bilbao, Spain",
         "dates":"2014 - 2015",
         "description":"Managed the marketing team in order to achieve business growth results"
-    },
-    {
+    },{
         "employer":"Hilti AG",
         "title":"Global Product Manager",
         "location":"Schaan, Liechtenstein",
         "dates":"2010 - 2014",
         "description":"Managed new product development and global portfolio of Diamond Drilling Tools"
-    },
-    {
+    },{
         "employer":"Acciona, S.A.",
         "title":"Head of Production",
         "location":"Valencia, Spain",
         "dates":"2005 - 2008",
         "description":"Managed several construction projects and subprojects, ranging from 4M€ budget to 10M€"
-    },
-    {
+    },{
         "employer":"Okisa, S.A.",
         "title":"Project Manager",
         "location":"Valencia, Spain",
         "dates":"2004 - 2005",
         "description":"Managed Urban Development construction project with a budget of 2.5M€"
-    }
-    ]
+    }]
 };
 
 var projects = {
-    "projects":[
-    {
+    "projects":[{
         "title":"CutAssist Drilling",
         "dates":"2012-2014",
         "description":"Product development of aautomatic, intelligent drilling system",
         "images":["images/fry.jpg","images/fry.jpg"]
-    },
-    {
+    },{
         "title":"CutAssist Drilling",
         "dates":"2012-2014",
         "description":"Product development of aaautomatic, intelligent drilling system",
         "images":["images/fry.jpg","images/fry.jpg"]
-    },
-    {
+    },{
         "title":"CutAssist Drilling",
         "dates":"2012-2014",
         "description":"Product development of aaaautomatic, intelligent drilling system",
         "images":["images/fry.jpg","images/fry.jpg"]
-    }
-    ]
+    }]
 };
 
-var education = {
-    "schools": [
-    {
-        "name":"Kellogg School of Management",
-        "location":"Evanston, IL",
-        "degree":"Master of Business Administration",
-        "major":"Marketing, Strategy, Finance, Managerial Economics",
-        "dates": "2008 - 2010",
-        "url": "http://www.kellogg.northwestern.edu/"
-    },
-    {
-        "name":"Universidad Politécnica de Valencia",
-        "location":"Valencia, Spain",
-        "degree":"MSc in Civil Engineering",
-        "major":"Urban Planning",
-        "dates": "1998-2004",
-        "url": "https://www.upv.es/"
-    }
-    ],
-    "onlineCourses": [
-    {
-        "title":"Introduction to Programming Nanodegree",
-        "school":"Udacity",
-        "dates":"2015",
-        "url":"http://udacity.com/"
-    },
-    {
-        "title":"Front End Development Nanodegree",
-        "school":"Udacity",
-        "dates":"2015",
-        "url":"http://udacity.com/"
-    }
-    ]
-};
+
 
 bio.display = function(){
 
@@ -121,22 +110,25 @@ bio.display = function(){
     var mobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
     var email = HTMLemail.replace("%data%",bio.contacts.email);
     var github = HTMLgithub.replace("%data%",bio.contacts.github);
+    var twitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
     var location = HTMLlocation.replace("%data%",bio.contacts.location);
 
     $("#topContacts").append(mobile);
     $("#topContacts").append(email);
     $("#topContacts").append(github);
+    $("#topContacts").append(twitter);
     $("#topContacts").append(location);
 
     $("#footerContacts").append(mobile);
     $("#footerContacts").append(email);
     $("#footerContacts").append(github);
+    $("#footerContacts").append(twitter);
     $("#footerContacts").append(location);
 
-    var bioPic = HTMLbioPic.replace("%data%",bio.bioPic);
+    var bioPic = HTMLbioPic.replace("%data%",bio.biopic);
     $("#header .text-wrapper").append(bioPic);
 
-    var welcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMsg);
+    var welcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
     $("#header .text-wrapper").append(welcomeMsg);
 
         $("#header .text-wrapper").append(HTMLskillsStart);
@@ -147,19 +139,19 @@ bio.display = function(){
 };
 
 work.display = function(){
-    for (job in work.jobs){
+    work.jobs.forEach(function(job){
         $("#workExperience .text-wrapper").append(HTMLworkStart);
-        var workEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-        var workTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
-        var workDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
-        var workLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
-        var workDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+        var workEmployer = HTMLworkEmployer.replace("%data%",job.employer);
+        var workTitle = HTMLworkTitle.replace("%data%",job.title);
+        var workDates = HTMLworkDates.replace("%data%",job.dates);
+        var workLocation = HTMLworkLocation.replace("%data%",job.location);
+        var workDescription = HTMLworkDescription.replace("%data%",job.description);
         // description
         $(".work-entry:last").append(workEmployer+workTitle);
         $(".work-entry:last").append(workDates);
         $(".work-entry:last").append(workLocation);
         $(".work-entry:last").append(workDescription);
-    };
+    });
 };
 
 
@@ -192,7 +184,7 @@ education.display = function(){
         var schoolLocation = HTMLschoolLocation.replace("%data%",school.location);
         $(".education-entry:last").append(schoolLocation);
 
-        var schoolMajor = HTMLschoolMajor.replace("%data%",school.major);
+        var schoolMajor = HTMLschoolMajor.replace("%data%",school.majors.join(", "));
         $(".education-entry:last").append(schoolMajor);
     });
     $("#education .text-wrapper").append(HTMLonlineClasses);
@@ -201,7 +193,7 @@ education.display = function(){
         var onlineTitle = HTMLonlineTitle.replace("%data%",course.title);
         var onlineSchool = HTMLonlineSchool.replace("%data%",course.school);
         $(".education-entry:last").append(onlineTitle+onlineSchool);
-        var onlineDates = HTMLonlineDates.replace("%data%",course.dates);
+        var onlineDates = HTMLonlineDates.replace("%data%",course.date);
         $(".education-entry:last").append(onlineDates);
         var onlineURL = HTMLonlineURL.replace("%data%",course.url);
         $(".education-entry:last").append(onlineURL);
@@ -234,7 +226,7 @@ $(document).ready(function(){
     $("#nav-mobile ul li a").click(function(){
         $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
         $(this).removeClass("open");
-    })
+    });
 });
 
 // We finally add an animation so the page will scroll smootly to the sections
@@ -246,7 +238,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 49
         }, 750);
         return false;
       }

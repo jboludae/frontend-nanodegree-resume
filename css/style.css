@@ -26,6 +26,16 @@ widht max-width of 970px*/
 
 /* We style the navigation bars*/
 /* First the standard navi bar for big screens*/
+
+.nav-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+}
+
 nav{
   margin-bottom: 0px;
   max-width: 970px;
@@ -245,6 +255,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
+  margin-top: 49px;
   background-color: rgb(50,90,140);
 }
 
